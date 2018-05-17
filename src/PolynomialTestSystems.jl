@@ -1,5 +1,13 @@
 module PolynomialTestSystems
 
-# package code goes here
+    import MultivariatePolynomials
+    const MP = MultivariatePolynomials
 
-end # module
+    import DynamicPolynomials: Polynomial, PolyVar, @polyvar
+
+    using Compat
+
+    include("testsystem.jl")
+    include("systems.jl")
+
+end

@@ -1,1 +1,8 @@
-julia 0.6
+# PolynomialTestSystems
+
+A collection of systems of polynomials for benchmarking, testing etc.
+
+## Acknowledgement
+
+Most of the polynomial systems are obtained from the database of polynomial
+systems created by Jan Verschelde and available under http://homepages.math.uic.edu/~jan/.
