@@ -137,6 +137,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "index.html#PolynomialTestSystems.ipp2",
+    "page": "PolynomialTestSystems",
+    "title": "PolynomialTestSystems.ipp2",
+    "category": "function",
+    "text": "ipp2()\n\nThe 6R inverse position problem.\n\nReferences\n\nThis system occurs as Example 3.3 in a paper by Charles Wampler: `Bezout Number Calculations for Multi-Homogeneous Polynomial Systems\', Appl. Math. Comput. vol. 51 No. 2–3, pp. 143–157.\n\nFor the original formulation of the problem, see  Charles Wampler and Alexander Morgan:  `Solving the 6R inverse position problem using a generic-case solution   methodology\', Mech. Mach. Theory, Vol. 26, No. 1, pp. 91-106, 1991.\n\n\n\n"
+},
+
+{
     "location": "index.html#PolynomialTestSystems.boon",
     "page": "PolynomialTestSystems",
     "title": "PolynomialTestSystems.boon",
@@ -165,7 +173,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PolynomialTestSystems",
     "title": "Systems",
     "category": "section",
-    "text": "chandra\ncyclic\nkatsura\nfourbar\nrps10\nipp\nboon\nheart\nd1"
+    "text": "chandra\ncyclic\nkatsura\nfourbar\nrps10\nipp\nipp2\nboon\nheart\nd1"
 },
 
 ]}
