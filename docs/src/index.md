@@ -25,6 +25,7 @@ katsura
 fourbar
 rps10
 ipp
+ipp2
 boon
 heart
 d1
