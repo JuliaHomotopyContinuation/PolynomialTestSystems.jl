@@ -14,13 +14,14 @@ using Compat.Test
 end
 
 @testset "systems" begin
-    for n=3:10
+    for n=3:11
         @test chandra(n) isa TestSystem
         @test cyclic(n) isa TestSystem
         @test katsura(n) isa TestSystem
     end
 
     @test ipp() isa TestSystem
+    @test ipp2() isa TestSystem
     @test fourbar() isa TestSystem
     @test rps10() isa TestSystem
 
