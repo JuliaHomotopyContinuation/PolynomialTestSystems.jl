@@ -7,7 +7,8 @@
 
 
 [PolynomialTestSystems.jl](https://github.com/JuliaHomotopyContinuation/PolynomialTestSystems.jl) is a collection of systems of polynomials for benchmarking, testing etc.
-Most of the polynomial systems are obtained from the database of polynomial
+
+Some of the polynomial systems are obtained from the database of polynomial
 systems created by Jan Verschelde and available under [http://homepages.math.uic.edu/~jan/](http://homepages.math.uic.edu/~jan/).
 
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
