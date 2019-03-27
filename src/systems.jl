@@ -1,4 +1,4 @@
-export chandra, cyclic, katsura, fourbar, rps10, ipp, ipp2, boon, heart, d1, bacillus_subtilis
+export chandra, cyclic, katsura, fourbar, rps10, ipp, ipp2, boon, heart, d1, bacillus_subtilis, griewank_osborne
 
 """
     chandra(n)
@@ -313,4 +313,19 @@ function bacillus_subtilis()
      -1 * 0.7 * vPp + 3600.0 * vP * phos + -1 * 18.0 * vPp + -1 * 180.0 * vPp,
      (phos + vPp) - 2.0]
     TestSystem(poly)
+end
+
+
+"""
+
+    griewank_osborne()
+
+This is an illustration of a system for which Newton's method fails near an isolated root.
+No matter how close one starts to the multiplicity-three isolated root at the origin, (x,y) = (0,0), Newton's method diverges.
+
+Reference: Griewank & Osborne, 1983
+"""
+function griewank_osborne()
+    @polyvar x y
+    TestSystem([(29/16)*x^3 - 2*x*y, x^2 - y])
 end

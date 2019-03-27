@@ -28,4 +28,6 @@ end
     @test boon() isa TestSystem
     @test heart() isa TestSystem
     @test d1() isa TestSystem
+    @test bacillus_subtilis() isa TestSystem
+    @test griewank_osborne() isa TestSystem
 end
