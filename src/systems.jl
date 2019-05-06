@@ -1,4 +1,5 @@
-export chandra, cyclic, katsura, fourbar, rps10, ipp, ipp2, boon, heart, d1, bacillus_subtilis, griewank_osborne
+export chandra, cyclic, katsura, fourbar, rps10, ipp, ipp2, boon, heart,
+    d1, bacillus_subtilis, griewank_osborne, tritangents
 
 """
     chandra(n)
@@ -312,7 +313,47 @@ function bacillus_subtilis()
      -1 * 0.7 * w2sigmaB + 3600.0 * w2 * sigmaB + -1 * 18.0 * w2sigmaB + -1 * 1800.0 * w2sigmaB * v + 1800.0 * w2v * sigmaB,
      -1 * 0.7 * vPp + 3600.0 * vP * phos + -1 * 18.0 * vPp + -1 * 180.0 * vPp,
      (phos + vPp) - 2.0]
-    TestSystem(poly)
+    TestSystem(poly; nsolutions=44)
+end
+
+
+"""
+
+    tritangents()
+
+See https://www.juliahomotopycontinuation.org/examples/tritangents/.
+"""
+function tritangents()
+    @polyvar h[1:3] # variables for the plane
+    @polyvar x[1:3] y[1:3] z[1:3] #variables for the contact points
+    @polyvar c[1:20] #variables for the cubic
+
+    #the quadric
+    Q = x[3] - x[1] * x[2]
+    #the cubic
+    C = c ⋅ unique(kron([x;1], [x;1], [x;1]))
+
+    #generate the system P for the contact point x
+    P_x = [
+      h ⋅ x - 1;
+      Q;
+      C;
+      det([h differentiate(Q, x) differentiate(C, x)])
+    ]
+
+    #generate a copy of P for the other contact points y,z
+    P_y = [p([h; x; c] => [h; y; c]) for p in P_x]
+    P_z = [p([h; x; c] => [h; z; c]) for p in P_x]
+
+    #define F
+    F = [P_x; P_y; P_z]
+
+    #create random complex coefficients for C
+    # c₁ is result of randn(ComplexF64, 20)
+    c₁ = Complex{Float64}[-0.524114+0.798188im, 0.23203+0.203011im, 0.24588+0.265859im, -0.0293688-0.0838781im, 1.29037+1.19918im, 0.225558+0.113139im, 0.757771+0.327947im, 0.716762-1.14998im, -0.721386+0.253249im, 0.22066+0.286244im, 1.06596-1.24645im, -0.287841-0.15352im, 0.980128+0.798647im, -0.918701-1.5926im, -0.325193-0.163909im, 0.0885901-0.437345im, 0.195358-1.07946im, 0.451222-0.677876im, -0.498035+0.368011im, -1.34059+1.35779im]
+    #plug in c₁ for c
+    poly = [f([h; x; y; z; c] => [h; x; y; z; c₁]) for f in F]
+    TestSystem(poly; nsolutions=720)
 end
 
 
