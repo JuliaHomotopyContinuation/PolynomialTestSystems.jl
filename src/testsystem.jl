@@ -4,7 +4,7 @@ export TestSystem, nvariables, equations, mixed_volume, nsolutions,
 struct TestSystem{T}
     equations::Vector{Polynomial{true, T}}
     bezout_number::Int
-    multi_homogenous_bezout_number::Union{Nothing, Tuple{Int, Vector{Vector{PolyVar{true}}}}}
+    multi_homogeneous_bezout_number::Union{Nothing, Tuple{Int, Vector{Vector{PolyVar{true}}}}}
     mixed_volume::Union{Nothing, Int}
     nsolutions::Union{Nothing, Int}
     nreal_solutions::Union{Nothing, Int}
@@ -74,7 +74,7 @@ bezout_number(F::TestSystem) = F.bezout_number
 """
     multi_bezout_number(system)::Union{Nothing, Tuple{Int, Vector{Vector{PolyVar{true}}}}}
 
-Returns a tuple containing the multi-homogenous bezout number
+Returns a tuple containing the multi-homogeneous bezout number
 as well as the corresponding grouping of the variables if known.
 """
-multi_bezout_number(F::TestSystem) = F.multi_homogenous_bezout_number
+multi_bezout_number(F::TestSystem) = F.multi_homogeneous_bezout_number
