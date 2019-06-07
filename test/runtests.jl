@@ -1,5 +1,5 @@
 using PolynomialTestSystems
-using Compat.Test
+using Test
 
 @testset "getters" begin
     F = chandra(5)
@@ -30,4 +30,5 @@ end
     @test d1() isa TestSystem
     @test bacillus_subtilis() isa TestSystem
     @test griewank_osborne() isa TestSystem
+    @test tritangents() isa TestSystem
 end
