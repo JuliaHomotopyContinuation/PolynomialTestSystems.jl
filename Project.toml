@@ -17,4 +17,4 @@ MultivariatePolynomials = "^0.2.8"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["PolynomialTestSystems", "Test"]
+test = ["Test"]
