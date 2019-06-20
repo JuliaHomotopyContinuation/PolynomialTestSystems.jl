@@ -31,4 +31,5 @@ end
     @test bacillus_subtilis() isa TestSystem
     @test griewank_osborne() isa TestSystem
     @test tritangents() isa TestSystem
+    @test cyclooctane() isa TestSystem
 end

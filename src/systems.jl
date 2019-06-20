@@ -1,5 +1,5 @@
 export chandra, cyclic, katsura, fourbar, rps10, ipp, ipp2, boon, heart,
-    d1, bacillus_subtilis, griewank_osborne, tritangents
+    d1, bacillus_subtilis, griewank_osborne, tritangents, cyclooctane
 
 """
     chandra(n)
@@ -369,4 +369,29 @@ Reference: Griewank & Osborne, 1983
 function griewank_osborne()
     @polyvar x y
     TestSystem([(29/16)*x^3 - 2*x*y, x^2 - y])
+end
+
+
+"""
+
+    cyclooctane(c::Float64=2.0)
+
+This is a system that describes the confirmation space of cyclooctane, where the squared distance between neighboring carbon atoms is `c`.  See
+
+    juliahomotopycontinuation.org/examples/cyclooctane/
+
+for a detailed description.
+"""
+function cyclooctane(c::Float64=2.0)
+    @polyvar z[1:3, 1:6]
+    z_vec = vec(z)[1:17]
+    Z = [zeros(3) z[:,1:5] [z[1,6]; z[2,6]; 0] [√c; 0; 0]]
+
+
+    F1 = [(Z[:, i] - Z[:, i+1]) ⋅ (Z[:, i] - Z[:, i+1]) - c for i in 1:7]
+    F2 = [(Z[:, i] - Z[:, i+2]) ⋅ (Z[:, i] - Z[:, i+2]) - 8c/3 for i in 1:6]
+    F3 = (Z[:, 7] - Z[:, 1]) ⋅ (Z[:, 7] - Z[:, 1]) - 8c/3
+    F4 = (Z[:, 8] - Z[:, 2]) ⋅ (Z[:, 8] - Z[:, 2]) - 8c/3
+    f = [F1; F2; F3; F4]
+    TestSystem(f)
 end
