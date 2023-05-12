@@ -1,7 +1,7 @@
 name = "PolynomialTestSystems"
 uuid = "4c526841-e1e8-562c-bfa9-9f39d642e243"
 authors = ["Sascha Timme <sascha.timme@gmail.com>"]
-version = "0.1.4"
+version = "0.1.5"
 
 [deps]
 DynamicPolynomials = "7c1d4256-1411-5781-91ec-d7bc3513ac07"
