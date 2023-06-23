@@ -338,7 +338,7 @@ function tritangents()
       h ⋅ x - 1;
       Q;
       C;
-      det([h differentiate(Q, x) differentiate(C, x)])
+      det([h MP.differentiate(Q, x) MP.differentiate(C, x)])
     ]
 
     #generate a copy of P for the other contact points y,z

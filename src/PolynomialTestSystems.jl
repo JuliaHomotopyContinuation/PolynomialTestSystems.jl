@@ -2,7 +2,8 @@ module PolynomialTestSystems
 
     import MultivariatePolynomials as MP
 
-    import DynamicPolynomials: Polynomial, PolyVar, @polyvar, differentiate
+    import DynamicPolynomials
+    import DynamicPolynomials: @polyvar
     using LinearAlgebra
 
     include("testsystem.jl")
