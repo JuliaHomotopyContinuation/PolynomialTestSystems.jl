@@ -1,7 +1,6 @@
 module PolynomialTestSystems
 
-    import MultivariatePolynomials
-    const MP = MultivariatePolynomials
+    import MultivariatePolynomials as MP
 
     import DynamicPolynomials: Polynomial, PolyVar, @polyvar, differentiate
     using LinearAlgebra

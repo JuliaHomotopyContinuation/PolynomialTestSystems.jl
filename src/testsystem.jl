@@ -1,8 +1,13 @@
 export TestSystem, nvariables, equations, mixed_volume, nsolutions,
     nreal_solutions, bezout_number, multi_bezout_number
 
+const VariableOrder = DynamicPolynomials.Commutative{DynamicPolynomials.CreationOrder}
+const MonomialOrder = DynamicPolynomials.Graded{MP.LexOrder}
+const VarType = DynamicPolynomials.Variable{VariableOrder,MonomialOrder}
+const PolyType{T} = DynamicPolynomials.Polynomial{VariableOrder,MonomialOrder,T}
+
 struct TestSystem{T}
-    equations::Vector{Polynomial{true, T}}
+    equations::Vector{PolyType{T}}
     bezout_number::Int
     multi_homogeneous_bezout_number::Union{Nothing, Tuple{Int, Vector{Vector{PolyVar{true}}}}}
     mixed_volume::Union{Nothing, Int}

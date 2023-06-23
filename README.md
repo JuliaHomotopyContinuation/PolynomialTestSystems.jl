@@ -16,6 +16,8 @@ systems created by Jan Verschelde and available under [http://homepages.math.uic
 [docs-stable-url]: https://juliahomotopycontinuation.github.io/PolynomialTestSystems.jl/stable
 [docs-latest-url]: https://juliahomotopycontinuation.github.io/PolynomialTestSystems.jl/latest
 
+[build-img]: https://github.com/JuliaHomotopyContinuation/PolynomialTestSystems.jl/workflows/run_tests/badge.svg?branch=master
+[build-url]: https://github.com/JuliaHomotopyContinuation/PolynomialTestSystems.jl/actions?query=workflow%3Arun_tests
 [build-img]: https://travis-ci.org/JuliaHomotopyContinuation/PolynomialTestSystems.jl.svg?branch=master
 [build-url]: https://travis-ci.org/JuliaHomotopyContinuation/PolynomialTestSystems.jl
 [codecov-img]: https://codecov.io/gh/juliahomotopycontinuation/PolynomialTestSystems.jl/branch/master/graph/badge.svg
