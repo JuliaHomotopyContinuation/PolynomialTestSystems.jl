@@ -9,7 +9,7 @@ const PolyType{T} = DynamicPolynomials.Polynomial{VariableOrder,MonomialOrder,T}
 struct TestSystem{T}
     equations::Vector{PolyType{T}}
     bezout_number::Int
-    multi_homogeneous_bezout_number::Union{Nothing, Tuple{Int, Vector{Vector{PolyVar{true}}}}}
+    multi_homogeneous_bezout_number::Union{Nothing, Tuple{Int, Vector{Vector{VarType}}}}
     mixed_volume::Union{Nothing, Int}
     nsolutions::Union{Nothing, Int}
     nreal_solutions::Union{Nothing, Int}
@@ -77,7 +77,7 @@ Returns the bezout number of the system.
 bezout_number(F::TestSystem) = F.bezout_number
 
 """
-    multi_bezout_number(system)::Union{Nothing, Tuple{Int, Vector{Vector{PolyVar{true}}}}}
+    multi_bezout_number(system)::Union{Nothing, Tuple{Int, Vector{Vector{DynamicPolynomial.Variable{...}}}}}
 
 Returns a tuple containing the multi-homogeneous bezout number
 as well as the corresponding grouping of the variables if known.
